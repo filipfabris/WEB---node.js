@@ -1,0 +1,18 @@
+<% let selectData = locals.selectData %>
+
+
+<select id="<%- selectData.id %>" <%- selectData.name ? `name = ${selectData.name}` : '' %>
+    <%- selectData.attributes ? selectData.attributes : '' %>
+    <%- selectData.class ? `class = ${selectData.class}` : ""%>>
+
+    <% selectData.list.forEach((item) => { %>
+
+    <option <%- (item.value == selectData.selected) ? "selected" : "" %> value="<%- item.value %>">
+        <%- item.name %>
+
+    </option>
+
+    <% }); %>
+
+
+</select>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <%- include(`partials/head`); %>
+
+    <body class="content">
+
+        <%- include(`partials/header`); %>
+
+
+        <section class="admin-margin">
+            <div class="centered-container">
+                <h1 class="font-secondary main-color">
+                    <span class="main-color-emphasized">Item</span>
+                    Managment</h1>
+                <div class="separator"></div>
+            </div>
+
+
+            <div class="form-div">
+                <form action="/admin/updateitem" method="post">
+                    <fieldset class="form-fieldset">
+
+                        <div class="form-div">
+                            <label class="form-label" for="categoryId">Item:</label>
+                            <% locals.selectData = locals.itemsSELECT; %>
+                            <%- include('partials/_select.ejs'); %>
+                        </div>
+
+                        <div class="form-div">
+                            <label class="form-label" for="name">Name:</label>
+                            <input class="form-input" name="name" type="text" size="30" value="<%= %>">
+                        </div>
+
+                        <div class="form-div">
+                            <label class="form-label" for="price">Price(HRK):</label>
+                            <input class="form-input" name="price" type="text" size="30">
+                        </div>
+
+                        <div class="form-div">
+                            <label class="form-label" for="categoryId">Category:</label>
+                            <% locals.selectData = locals.categorySELECT; %>
+                            <%- include('partials/_select.ejs'); %>
+                        </div>
+
+                        <div class="form-div">
+                            <label class="form-label" for="imageUrl">Image (URL):</label>
+                            <input class="form-input" name="imageUrl" type="text" size="40">
+                        </div>
+
+                        <div class="form-div">
+                            <label class="form-label" for="colors">Colors:</label>
+                            <input class="form-input" name="colors" type="text" size="30">
+                        </div>
+
+                        <hr>
+
+                        <div class="form-menu">
+                            <input class="btn" type="submit">
+                            <input class="btn" type="reset">
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+
+        </section>
+    </body>
+
+</html>
